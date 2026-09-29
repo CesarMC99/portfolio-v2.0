@@ -19,9 +19,16 @@ export function Frameworks() {
       'sqlite',
       'tailwindcss',
       'vitejs',
-      'nextjs',
+      // Versiones blancas: los logos originales son negros y no se ven
+      // sobre el fondo oscuro del portafolio
+      'nextjs-white',
       'astro',
-      'express',
+      'express-white',
+      // Stack del proyecto ÁMBAR (e-commerce full stack)
+      'nestjs',
+      'graphql',
+      'mongodb',
+      'stripe',
    ]
    return (
       <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">

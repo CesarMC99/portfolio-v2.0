@@ -7,6 +7,8 @@ interface ProjectProps {
     description: string
     subDescription: string[]
     href: string
+    // Opcional: enlaces al código (solo algunos proyectos los tienen)
+    repos?: { label: string; href: string }[]
     image: string
     tags: {
         id: number
@@ -21,6 +23,7 @@ export const Project = ({
     description,
     subDescription,
     href,
+    repos,
     image,
     tags,
     setPreview
@@ -58,6 +61,7 @@ export const Project = ({
                     image={image}
                     tags={tags}
                     href={href}
+                    repos={repos}
                     closeModal={() => setIsHidden(false)}
                 />
             )}

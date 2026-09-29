@@ -5,6 +5,7 @@ interface ProjectDetailsProps {
     description: string
     subDescription: string[]
     href: string
+    repos?: { label: string; href: string }[]
     image: string
     tags: {
         id: number
@@ -21,12 +22,13 @@ export const ProjectDetails = ({
     image,
     tags,
     href,
+    repos,
     closeModal
 }: ProjectDetailsProps) => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm">
             <motion.div
-                className="relative max-w-2xl border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
+                className="relative max-w-2xl max-h-[90vh] overflow-y-auto mx-4 border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
             >
@@ -52,6 +54,27 @@ export const ProjectDetails = ({
                             {subDesc}
                         </p>
                     ))}
+                    {repos && repos.length > 0 && (
+                        <div className="flex flex-wrap gap-4 mb-3">
+                            {repos.map((repo) => (
+                                <a
+                                    key={repo.href}
+                                    href={repo.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-1 text-sm text-neutral-300 underline underline-offset-4 hover:text-white"
+                                >
+                                    <img
+                                        src="assets/logos/github.svg"
+                                        alt=""
+                                        // invert: el logo es negro y el fondo del modal oscuro
+                                        className="size-4 invert"
+                                    />
+                                    {repo.label}
+                                </a>
+                            ))}
+                        </div>
+                    )}
                     <div className="flex items-center justify-between mt-4">
                         <div className="flex gap-3">
                             {tags.map((tag) => (

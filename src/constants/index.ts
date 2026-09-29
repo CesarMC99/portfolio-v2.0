@@ -1,5 +1,64 @@
 export const myProjects = [
    {
+      id: 7,
+      title: 'ÁMBAR · E-commerce Full Stack',
+      description:
+         'Tienda online de moda completa, con frontend y backend propios: catálogo con filtros y buscador, carrito, favoritos, cuentas de usuario y pagos con Stripe (en modo de prueba). Desplegada en Vercel y Render.',
+      subDescription: [
+         'Construí el backend con NestJS y GraphQL sobre MongoDB, con una arquitectura limpia por módulos (dominio, aplicación, infraestructura y presentación) y más de 130 tests unitarios.',
+         'Implementé autenticación con JWT y refresh token rotativo en cookie httpOnly, inicio de sesión con Google, recuperación de contraseña por correo y cierre del resto de sesiones al cambiarla.',
+         'Integré pagos con Stripe: el importe lo calcula siempre el servidor, el stock se reserva de forma atómica y cada pago se confirma una sola vez por webhook, aunque el cliente cierre la pestaña.',
+         'Desarrollé el frontend con Next.js 16 (App Router, Server Components e ISR), React 19, Apollo Client con tipos generados por GraphQL Codegen y Tailwind CSS, adaptado a móvil.',
+         'Añadí buscador con sugerencias, carrito de invitado que se fusiona al iniciar sesión, historial de pedidos, correos transaccionales con Resend e imágenes optimizadas con Cloudinary.',
+         'Para probar la compra usa la tarjeta de prueba 4242 4242 4242 4242 (cualquier fecha futura y CVC). La primera carga puede tardar unos segundos: el servidor es gratuito y se "duerme".',
+      ],
+      href: 'https://ambar-store.vercel.app/',
+      repos: [
+         {
+            label: 'Código frontend',
+            href: 'https://github.com/CesarMC99/ecommerce-frontend',
+         },
+         {
+            label: 'Código backend',
+            href: 'https://github.com/CesarMC99/ecommerce-backend',
+         },
+      ],
+      logo: '',
+      image: '/assets/projects/ambar.png',
+      tags: [
+         {
+            id: 1,
+            name: 'Next.js',
+            path: '/assets/logos/nextjs-white.svg',
+         },
+         {
+            id: 2,
+            name: 'NestJS',
+            path: '/assets/logos/nestjs.svg',
+         },
+         {
+            id: 3,
+            name: 'GraphQL',
+            path: '/assets/logos/graphql.svg',
+         },
+         {
+            id: 4,
+            name: 'MongoDB',
+            path: '/assets/logos/mongodb.svg',
+         },
+         {
+            id: 5,
+            name: 'TypeScript',
+            path: '/assets/logos/typescript.svg',
+         },
+         {
+            id: 6,
+            name: 'Stripe',
+            path: '/assets/logos/stripe.svg',
+         },
+      ],
+   },
+   {
       id: 1,
       title: 'Plataforma E-commerce',
       description:
@@ -240,13 +299,17 @@ export const mySocials = [
 
 export const experiences = [
    {
-      title: 'Estudiante de Ingenieria de Sistemas',
-      job: 'Universidad Tecnologica del Perú',
-      date: '2020 - 2025',
+      title: 'Desarrollador Fullstack',
+      job: 'Aptura Labs',
+      date: '2025 AGOSTO - 2026 JULIO',
       contents: [
-         'Estudiante de Ingeniería de Sistemas en el penúltimo ciclo. He desarrollado proyectos personales aplicando diversas tecnologías, y he participado en proyectos grupales colaborando con comunidades de programadores.',
-         'He fortalecido habilidades de trabajo en equipo, resolución de problemas y aprendizaje autónomo mediante participación activa en comunidades de desarrollo.',
-         'Desarrollo autodidacta constante, explorando librerías como Zod, React Hook Form, Shadcn UI, entre otras y patrones de arquitectura frontend.',
+         'Desarrollé APIs y servicios backend con NestJS y GraphQL, diseñando schemas, resolvers y módulos escalables bajo una arquitectura modular.',
+         'Construí interfaces modernas con Next.js y Astro, integrando GraphQL mediante Apollo Client e implementando diseños pixel-perfect a partir de Figma.',
+         'Reduje un 35% los tiempos de carga optimizando el frontend con SSR e ISR en Next.js.',
+         'Implementé testing automatizado con Jest y Vitest, asegurando la calidad del código y la cobertura de los componentes críticos.',
+         'Configuré pipelines de CI/CD y gestioné el flujo de trabajo en Jira siguiendo prácticas Scrum.',
+         'Desarrollé animaciones y microinteracciones con Framer Motion para enriquecer la experiencia de usuario.',
+         'Integré herramientas de IA (Claude, ChatGPT y Gemini) en el flujo de desarrollo para acelerar la generación de código, la refactorización, la documentación técnica y la depuración.',
       ],
    },
    {
@@ -254,25 +317,21 @@ export const experiences = [
       job: 'Devdatep Consulting',
       date: '2025 MARZO - JULIO',
       contents: [
-         'Desarrollé interfaces modernas y responsivas siguiendo prototipos creados en Figma, asegurando coherencia visual y buena experiencia de usuario.',
-         'Utilicé React, TypeScript, React Router y TailwindCSS como base del stack de desarrollo frontend.',
-         'Gestioné el estado global de la aplicación y realicé integraciones con el backend en Laravel utilizando Redux Toolkit.',
+         'Construí interfaces responsivas con React, TypeScript y TailwindCSS a partir de prototipos en Figma, priorizando el rendimiento y la accesibilidad.',
+         'Gestioné el estado global y la comunicación con APIs REST (backend en Laravel) con Redux Toolkit y RTK Query.',
          'Implementé formularios dinámicos y validaciones robustas con React Hook Form y Zod.',
-         'Integré librerías de componentes como Shadcn UI, Motion y React Icons para mantener una interfaz atractiva y reutilizable.',
-         'Participé en revisiones de código y mantenimientos enfocados en la escalabilidad y legibilidad del código.',
+         'Apliqué principios SOLID para desarrollar soluciones escalables, mantenibles y fáciles de extender.',
+         'Participé en un equipo ágil bajo Scrum (dailies, sprint reviews y retrospectivas) y colaboré en GitHub con Pull Requests y revisiones de código.',
       ],
    },
    {
-      title: 'Desarrollador Frontend',
-      job: 'Aptura Labs',
-      date: '2025 AGOSTO - SEPTIEMBRE',
+      title: 'Bachiller en Ingeniería de Sistemas e Informática',
+      job: 'Universidad Tecnológica del Perú',
+      date: '2020 - 2026',
       contents: [
-         'Desarrollé interfaces web utilizando Next.js y Astro, asegurando un rendimiento óptimo y una arquitectura escalable.',
-         'Implementé Apollo Client para integrar el frontend con un backend en GraphQL, optimizando las consultas y el manejo del estado global.',
-         'Apliqué pixel-perfect siguiendo los diseños en Figma, garantizando fidelidad visual y experiencia de usuario consistente.',
-         'Incorporé animaciones fluidas y microinteracciones con Framer Motion y otras librerías de frontend.',
-         'Colaboré con el equipo en entornos Git/GitHub, gestionando ramas, revisiones de código y despliegues continuos.',
-         'Conseguí reducir los tiempos de carga de la web en un 35% gracias a la optimización de componentes en Next.js y el uso de SSR/ISR.',
+         'Egresado de la carrera de Ingeniería de Sistemas e Informática en julio de 2026, con el grado de Bachiller.',
+         'Formación en todo el ciclo de desarrollo de software: análisis, diseño, bases de datos, programación, pruebas y gestión de proyectos.',
+         'Certificaciones complementarias: NestJS y GraphQL, AWS, Angular, Node.js y Express, Next.js con React y Redux, y Git y GitHub.',
       ],
    },
 ]
