@@ -32,7 +32,6 @@ export const Contact = () => {
         setIsLoading(true)
 
         try {
-            console.log('From submitted:', formData)
             await emailjs.send(
                 'service_0blh5ke',
                 'template_9cqngfk',
@@ -47,11 +46,19 @@ export const Contact = () => {
             )
             setIsLoading(false)
             setFormData({ name: '', email: '', message: '' })
-            showAlertMessage('success', 'You message has been sent!')
+            showAlertMessage(
+                'success',
+                '¡Mensaje enviado! Te responderé lo antes posible.'
+            )
         } catch (error) {
             setIsLoading(false)
-            console.log(error)
-            showAlertMessage('danger', 'Somthing went wrong!')
+            // El detalle queda en la consola para depurar (p. ej. si EmailJS
+            // pierde la conexión con Gmail); al visitante, un mensaje claro
+            console.error('[contacto] No se pudo enviar el mensaje:', error)
+            showAlertMessage(
+                'danger',
+                'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a cesar99dev@gmail.com'
+            )
         }
     }
     return (
